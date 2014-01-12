@@ -1,7 +1,5 @@
-HOANG QUOC HUNG
+HOANG QUOC HUNG - Project Learn Javascript 24 hours tranner
 ------------------------
-
-Project Learn Javascript 24 hours tranner
 
 <strong>Part I: Introduction to JavaScript.</strong>
 
