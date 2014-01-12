@@ -1,9 +1,9 @@
 HOANG QUOC HUNG - JAVASCRIPT 24 HOURS
 ------------------------
 
-Author Name : Hoang Quoc Hung
-Address : Viet Nam
-Author URL : http://azhung.com
+Author Name : Hoang Quoc Hung<br/>
+Address : Viet Nam<br/>
+Author URL : http://azhung.com<br/>
 
 ------------------------
 <strong>Part I: Introduction to JavaScript.</strong>
