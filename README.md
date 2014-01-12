@@ -3,94 +3,54 @@ HOANG QUOC HUNG
 
 Project Learn Javascript 24 hours tranner
 
-Part I: Introduction to JavaScript.
+<strong>Part I: Introduction to JavaScript.</strong>
 
---Lesson 1: Adding JavaScript to a Web Page.
+--<em><strong>Lesson 1</strong></em>: Adding JavaScript to a Web Page.
+--<em><strong>Lesson 2</strong></em>: Variables and JavaScript Syntax.
+--<em><strong>Lesson 3</strong></em>: Functions.
+--<em><strong>Lesson 4</strong></em>: Making Decisions.
+--<em><strong>Lesson 5</strong></em>: Loops.
+--<em><strong>Lesson 6</strong></em>: Scope.
+--<em><strong>Lesson 7</strong></em>: Objects and Built-In Types.
+--<em><strong>Lesson 8</strong></em>: Custom Objects.
+--<em><strong>Lesson 9</strong></em>: Prototypes and Inheritance (The Function Object).
 
---Lesson 2: Variables and JavaScript Syntax.
+<strong>Part II: Programming the Browser.</strong>
 
---Lesson 3: Functions.
+--<em><strong>Lesson 10</strong></em>: The window Object.
+--<em><strong>Lesson 11</strong></em>: Scripting Windows.
+--<em><strong>Lesson 12</strong></em>: Scripting Frames.
+--<em><strong>Lesson 13</strong></em>: The Document Object Model.
+--<em><strong>Lesson 14</strong></em>: Adding HTML With JavaScript.
+--<em><strong>Lesson 15</strong></em>: Modifying Element Style.
+--<em><strong>Lesson 16</strong></em>: Introduction to Events.
+--<em><strong>Lesson 17</strong></em>: Assigning Event Handlers with HTML Attributes.
+--<em><strong>Lesson 18</strong></em>: Using Early DOM Event Handlers.
+--<em><strong>Lesson 19</strong></em>: Using Standard DOM and IE Event Handlers.
+--<em><strong>Lesson 20</strong></em>: Writing Cross-Browser Event Handlers.
+--<em><strong>Lesson 21</strong></em>: The Standard Event Object.
+--<em><strong>Lesson 22</strong></em>: Internet Explorer's Event Object.
+--<em><strong>Lesson 23</strong></em>: Writing Cross-Browser Event Code.
+--<em><strong>Lesson 24</strong></em>: Dragging and Dropping.
+--<em><strong>Lesson 25</strong></em>: Timers and Animating Elements.
+--<em><strong>Lesson 26</strong></em>: Forms - A Primer.
+--<em><strong>Lesson 27</strong></em>: Scripting Buttons.
+--<em><strong>Lesson 28</strong></em>: Scripting Text Elements.
+--<em><strong>Lesson 29</strong></em>: Scripting Selection Boxes.
+--<em><strong>Lesson 30</strong></em>: Scripting Checkboxes and Radio Buttons.
+--<em><strong>Lesson 31</strong></em>: An Introduction to Ajax.
+--<em><strong>Lesson 32</strong></em>: Using XMLHttpRequest Objects.
+--<em><strong>Lesson 33</strong></em>: Making Ajax Requests Using GET.
+--<em><strong>Lesson 34</strong></em>: Making Ajax Requests Using POST.
+--<em><strong>Lesson 35</strong></em>: JSON.
 
---Lesson 4: Making Decisions.
+<strong>Part III: Handling Errors, Debugging, and Best Practices.</strong>
 
---Lesson 5: Loops.
-
---Lesson 6: Scope.
-
---Lesson 7: Objects and Built-In Types.
-
---Lesson 8: Custom Objects.
-
---Lesson 9: Prototypes and Inheritance (The Function Object).
-
-Part II: Programming the Browser.
-
---Lesson 10: The window Object.
-
---Lesson 11: Scripting Windows.
-
---Lesson 12: Scripting Frames.
-
---Lesson 13: The Document Object Model.
-
---Lesson 14: Adding HTML With JavaScript.
-
---Lesson 15: Modifying Element Style.
-
---Lesson 16: Introduction to Events.
-
---Lesson 17: Assigning Event Handlers with HTML Attributes.
-
---Lesson 18: Using Early DOM Event Handlers.
-
---Lesson 19: Using Standard DOM and IE Event Handlers.
-
---Lesson 20: Writing Cross-Browser Event Handlers.
-
---Lesson 21: The Standard Event Object.
-
---Lesson 22: Internet Explorer's Event Object.
-
---Lesson 23: Writing Cross-Browser Event Code.
-
---Lesson 24: Dragging and Dropping.
-
---Lesson 25: Timers and Animating Elements.
-
---Lesson 26: Forms — A Primer.
-
---Lesson 27: Scripting Buttons.
-
---Lesson 28: Scripting Text Elements.
-
---Lesson 29: Scripting Selection Boxes.
-
---Lesson 30: Scripting Checkboxes and Radio Buttons.
-
---Lesson 31: An Introduction to Ajax.
-
---Lesson 32: Using XMLHttpRequest Objects.
-
---Lesson 33: Making Ajax Requests Using GET.
-
---Lesson 34: Making Ajax Requests Using POST.
-
---Lesson 35: JSON.
-
-Part III: Handling Errors, Debugging, and Best Practices.
-
---Lesson 36: Common Coding Mistakes.
-
---Lesson 37: Handling Errors.
-
---Lesson 38: Debugging With Firebug.
-
---Lesson 39: Coding Guidelines.
-
---Lesson 40: Separating JavaScript and HTML.
-
---Lesson 41: Separating JavaScript and CSS.
-
---Lesson 42: Avoiding Global Scope.
-
---Lesson 43: Optimizing Your Code.
+--<em><strong>Lesson 36</strong></em>: Common Coding Mistakes.
+--<em><strong>Lesson 37</strong></em>: Handling Errors.
+--<em><strong>Lesson 38</strong></em>: Debugging With Firebug.
+--<em><strong>Lesson 39</strong></em>: Coding Guidelines.
+--<em><strong>Lesson 40</strong></em>: Separating JavaScript and HTML.
+--<em><strong>Lesson 41</strong></em>: Separating JavaScript and CSS.
+--<em><strong>Lesson 42</strong></em>: Avoiding Global Scope.
+--<em><strong>Lesson 43</strong></em>: Optimizing Your Code.
