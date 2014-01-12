@@ -1,6 +1,11 @@
-HOANG QUOC HUNG - Project Learn Javascript 24 hours tranner
+HOANG QUOC HUNG - JAVASCRIPT 24 HOURS
 ------------------------
 
+Author Name : Hoang Quoc Hung
+Address : Viet Nam
+Author URL : http://azhung.com
+
+------------------------
 <strong>Part I: Introduction to JavaScript.</strong>
 
   <em><strong>Lesson 1</strong></em>: Adding JavaScript to a Web Page.<br/>
