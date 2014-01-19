@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Lesson 15 | Modyfing Style CSS</title>
+	<style type="text/css">
+		.message{
+			color: navy;
+			font-weight: bold;
+			background: gray;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="divMessage">
+		Here is the Message
+	</div>
+	<input type="button" value="Toggle Style" onclick="toggleMessage2();" />
+	
+	<script type="text/javascript">
+		// Method Toggle 1
+		var toggleMessage = function() {
+			var divMessage = document.getElementById("divMessage");
+			if (!divMessage.style.color) {
+				divMessage.style.color = "red";
+				divMessage.style.fontWeight = "bold";
+				divMessage.style.background = "gray";
+			} else {
+				divMessage.style.color = "";
+				divMessage.style.fontWeight = "";
+				divMessage.style.background = "";
+			}
+		}
+		
+		// Method Toggle 2
+		function toggleMessage2() {
+			var divMessage = document.getElementById("divMessage");
+			if (divMessage.className === "message") {
+				divMessage.className = "";
+			} else {
+				divMessage.className = "message";
+			}
+		}
+	</script>
+</body>
+</html>
