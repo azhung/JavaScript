@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lesson 20 | Writing Cross-Browser Event Handlers</title>
+	<style type="text/css">
+		td{
+			border: 1px solid gray;
+			width: 50px;
+			text-align: center;
+		}
+		td a{
+			display: block;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		#result{
+			height: 50px;
+			text-align: left !important;
+		}
+	</style>
+</head>
+<body>
+	<table border="0" cellpadding="2" cellspacing="2">
+		<tr>
+			<td colspan="4" id="result"></td>
+		</tr>
+		<tr>
+			<td><a href="#">1</a></td>
+			<td><a href="#">2</a></td>
+			<td><a href="#">3</a></td>
+			<td><a href="#">+</a></td>
+		</tr>
+		
+		<tr>
+			<td><a href="#">4</a></td>
+			<td><a href="#">5</a></td>
+			<td><a href="#">6</a></td>
+			<td><a href="#">-</a></td>
+		</tr>
+		
+		<tr>
+			<td><a href="#">7</a></td>
+			<td><a href="#">8</a></td>
+			<td><a href="#">9</a></td>
+			<td><a href="#">*</a></td>
+		</tr>
+		
+		<tr>
+			<td><a href="#">Clear</a></td>
+			<td><a href="#">0</a></td>
+			<td><a href="#">=</a></td>
+			<td><a href="#">/</a></td>
+		</tr>
+		
+	</table>
+	<script type="text/javascript" src="eventUtility.js"></script>
+	<script type="text/javascript">
+		// Đối tượng máy tính
+		var calculator = {
+			
+			resultField : document.getElementById("result"),
+			
+			clearBox : function() {
+				this.resultField.innerHTML = "";
+			},
+			addDigit : function(digit) {
+				this.resultField.innerHTML += digit;
+			},
+			calculate : function() {
+				this.resultField.innerHTML = eval(this.resultField.innerHTML);
+			}
+			
+		};
+		
+		eventUtility.addEvent(document, "click", function(event){
+			var target = eventUtility.getTarget(event);
+			
+			if (target.tagName.toUpperCase() === "A") {
+				var innerHTML = target.innerHTML;
+				switch(innerHTML) {
+					case "Clear":
+						calculator.clearBox();
+						break;
+					case "=":
+						calculator.calculate();
+						break;
+					default:
+						calculator.addDigit(innerHTML);
+						break;
+				}
+			}
+		});
+		
+	</script>
+</body>
+</html>
