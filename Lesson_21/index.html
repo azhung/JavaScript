@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lesson 21 | The Standard Event Object</title>
+	<style type="text/css">
+		*{
+			margin: 0; padding: 0;
+		}
+		.divContainer{
+			overflow: hidden;			
+		}
+		.button-normal{
+			margin-left: 10px;
+			float: left;
+			width: 50px; height: 50px;
+			background: #d0c8c8;
+		}
+		.button-over{
+			margin-left: 10px;
+			float: left;
+			width: 50px; height: 50px;
+			background: #e91615;
+		}
+		.button-click{
+			margin-left: 10px;
+			float: left;
+			width: 50px; height: 50px;
+			background: #09f70e;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="divContainer">
+		<span class="button-normal" ></span>
+		<span class="button-normal" ></span>
+		<span class="button-normal" ></span>
+	</div>
+	
+	<script type="text/javascript" src="eventUtility.js"></script>
+	<script type="text/javascript">
+		var mouseHandler = function(event) {
+			var eSrc = event.target;
+			var type = event.type;
+			
+			if (eSrc.tagName.toUpperCase() === "SPAN") {
+				if (type === "mouseover") {
+					if (eSrc.className !== "button-over") {
+						eSrc.className = "button-over";
+					}
+				} else if (type === "mouseout") {
+					if (eSrc.className !== "button-normal") {
+						eSrc.className = "button-normal";
+					}
+				} else if (type === "click") {
+					if (eSrc.className !== "button-click") {
+						eSrc.className = "button-click";
+					} else {
+						eSrc.className = "button-over";
+					}
+				}
+			}
+			
+		}
+		
+		eventUtility.addEvent(document, "mouseover", mouseHandler);
+		eventUtility.addEvent(document, "mouseout", mouseHandler);
+		eventUtility.addEvent(document, "click", mouseHandler);
+	</script>
+	
+</body>
+</html>
