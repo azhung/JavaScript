@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lesson 20 | Writing Cross-Browser Event Handlers</title>
+	<style type="text/css">
+		td{
+			border: 1px solid gray;
+			width: 50px;
+			text-align: center;
+		}
+		td a{
+			display: block;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		#result{
+			height: 50px;
+			text-align: left !important;
+		}
+	</style>
+</head>
+<body>
+	<table border="0" cellpadding="2" cellspacing="2">
+		<tr>
+			<td colspan="4" id="result"></td>
+		</tr>
+		<tr>
+			<td><a href="#">1</a></td>
+			<td><a href="#">2</a></td>
+			<td><a href="#">3</a></td>
+			<td><a href="#">+</a></td>
+		</tr>
+		
+		<tr>
+			<td><a href="#">4</a></td>
+			<td><a href="#">5</a></td>
+			<td><a href="#">6</a></td>
+			<td><a href="#">-</a></td>
+		</tr>
+		
+		<tr>
+			<td><a href="#">7</a></td>
+			<td><a href="#">8</a></td>
+			<td><a href="#">9</a></td>
+			<td><a href="#">*</a></td>
+		</tr>
+		
+		<tr>
+			<td><a href="#">Clear</a></td>
+			<td><a href="#">0</a></td>
+			<td><a href="#">=</a></td>
+			<td><a href="#">/</a></td>
+		</tr>
+		
+	</table>
+	<script type="text/javascript" src="eventUtility.js"></script>
+	<script type="text/javascript">
+		
+		onload = function () {
+			
+			var link = document.getElementsByTagName("a");			
+			for (var i = 0; i < link.length; i++) {
+				var linkC = link[i];
+				var linkInner = linkC.innerHTML;
+				var func = null;
+				switch(linkInner) {
+					case "Clear":						
+						func = clearBox;
+						break;
+					case "=":
+						func = calculate;						
+						break;
+					default:
+						func = getHandlers(linkInner);						
+						break;
+				}
+				// linkC.addEventListener("click", func, false);
+				eventUtility.addEvent(linkC, "click", func);
+			}
+			
+		};
+		
+		var getHandlers = function(digit) {
+			return function() {
+				addDigit(digit);
+				return false;
+			}
+		}
+		
+		var addDigit = function (digit) {
+			var resultField = document.getElementById("result");
+			resultField.innerHTML += digit;
+			return false;
+		}
+		
+		var calculate = function () {
+			var resultField = document.getElementById("result");
+			resultField.innerHTML = eval(resultField.innerHTML);
+			return false;
+		}
+		
+		function clearBox () {
+			var resultField = document.getElementById("result");
+			resultField.innerHTML = "";
+		}
+		
+	</script>
+</body>
+</html>
