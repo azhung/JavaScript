@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Lesson 13 | Document Object Model</title>
+</head>
+<body>
+	<p>This is some text</p>
+	<p>This is more text</p>
+	<p>Here is text with a <span id="foo">Span Element</span></p>
+	<script type="text/javascript">
+		// var theSpan = document.getElementsByTagName("span")[0];
+		var theSpan = document.getElementById("foo");
+		theSpan.childNodes[0].nodeValue = "The span containing text new";
+	</script>
+</body>
+</html>
