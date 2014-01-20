@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lesson 24 | Droping and Draging</title>
+	<style type="text/css">
+		*{
+			margin: 0; padding: 0;
+		}
+		.box{
+			width: 100px; height: 100px;
+			position: absolute;
+			cursor: move;
+		}
+		.box1{
+			background: #09f70e;
+		}
+		.box2{
+			background: #ce1eee;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	
+	<script type="text/javascript" src="eventUtility.js"></script>
+	<script type="text/javascript">
+		
+		// Doi tuong Drag
+		var objDrag = {
+			
+			// Cai dat cho doi tuong Drag
+			setDragObj : function (element, mouseX, mouseY) {
+				this.element = element;
+				this.top = element.offsetTop - mouseY;
+				this.left = element.offsetLeft - mouseX;
+				this.element.style.zIndex = this.zIndex++;
+			},
+			
+			// Phuong thuc chuyen toi vi tri nao
+			dragTo : function (x, y) {
+				this.element.style.top = y + this.top + "px";
+				this.element.style.left = x + this.left + "px";
+			},
+			
+			// Cac gia tri mac dinh
+			element : null,
+			draging : false,
+			top : 0,
+			left : 0,
+			zIndex : 1
+		};
+		
+		function mouseHandlers(event) {
+			
+			var target = eventUtility.getTarget(event);
+			var type = event.type;
+			var x = event.clientX;
+			var y = event.clientY;
+			
+			switch (type) {
+				case "mousedown" :
+					// Do something
+					if (target.className.indexOf("box") > -1) {
+						objDrag.draging = true;
+						objDrag.setDragObj(target, x, y);
+					}
+					break;
+				case "mouseup" :
+					// Do something
+					objDrag.draging = false;
+					break;
+				case "mousemove" :
+					// Do something
+					if (objDrag.draging) {
+						objDrag.dragTo(x, y);
+					}
+					break;
+			}
+			
+		};
+		
+		eventUtility.addEvent(document, "mousedown", mouseHandlers);
+		eventUtility.addEvent(document, "mouseup", mouseHandlers);
+		eventUtility.addEvent(document, "mousemove", mouseHandlers);
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
