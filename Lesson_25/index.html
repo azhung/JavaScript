@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lesson 25 | Timer and Animating Elements</title>
+	<style type="text/css">
+		.box{
+			width: 100px; height: 100px;
+			background: #ffdd55;
+		}
+	</style>
+</head>
+<body>	
+	<a href="#" onclick="animated.startAnimation();">Start Animation</a>
+	<a href="#" onclick="animated.shinkAnimation();">Shink Animation</a>
+	<a href="#" onclick="animated.stopAnimation();">Stop Animation</a>
+	<div class="box" id="animation"></div>
+	
+	<script type="text/javascript">
+		var animated = {
+			
+			timer : null,
+			element : document.getElementById("animation"),
+			startAnimation : function () {
+				this.stopAnimation();
+				this.timer = setInterval(function(){
+					animated.doAnimation(5);
+				}, 1000);
+			},
+			
+			shinkAnimation : function () {
+				this.stopAnimation();
+				this.timer = setInterval(function(){
+					animated.doAnimation(-5);
+				}, 1000);
+				
+			},
+			
+			stopAnimation : function () {
+				clearInterval(this.timer);
+			},
+			
+			doAnimation : function (amount) {
+				var size = this.element.offsetWidth;
+				if ((amount > 0 && size < 200) || (amount < 0 && size > 0)) {
+					this.element.style.width = size + amount + "px";
+					this.element.style.height = size + amount + "px";
+				}
+			}
+			
+		}
+	</script>
+	
+</body>
+</html>
