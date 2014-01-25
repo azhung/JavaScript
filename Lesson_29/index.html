@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lesson 28 | Scripting Text Element</title>
+</head>
+<body>
+	<form action ="" method="post" name="newForm" onsubmit="validateForm();">
+		Name : <input type="text" name="username" /><br/>
+		Age : <input type="text" name="age" /><br/>
+		Email : <input type="text" name="email" /><br/>
+		Password : <input type="password" name="password" /><br/>
+		Retype Password : <input type="password" name="repassword" /><br/>
+		Select Day : <select id="myDay" name="dayOfWeek"></select><br/>
+		<input type="submit" name="submit" value="Submit" />
+	</form>
+	
+	<script type="text/javascript" src="eventUtility.js"></script>
+	
+	<script type="text/javascript">
+		populateDate();
+		// Hàm tính ngày cho selection
+		function populateDate() {
+			// Khởi tạo biến dayOfWeek cho select name dayOfWeek
+			var dayOfWeek = document.getElementById("myDay");
+			// Danh sách các ngày trong tuần
+			var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thurday", "Firday", "Saturday"];
+			// Lấy ra ngày hiện tại từ thời gian hệ thống
+			var toDay = new Date().getDay();
+			// Lặp và add các ngày vào select
+			for (var i = 0; i < days.length; i++) {
+				var lengthOption = dayOfWeek.options.length;
+				// Add đối tượng Option("Ngày", Value), vị trí add vào (Tùy chọn)
+				dayOfWeek.add(new Option(days[i], i), lengthOption);
+			}
+			// Đặt selected cho ngày hôm nay 
+			dayOfWeek.selectedIndex = toDay; // toDay là một số từ 0 - 6
+		}
+		
+		var validateForm = function() {
+			var theForm = document.newForm;
+			var txtName = theForm.username;
+			var txtAge = theForm.age;
+			var txtEmail = theForm.email;
+			var txtPass = theForm.password;
+			var txtRePass = theForm.repassword;
+			var button = theForm.submit;
+			var age = parseInt(txtAge.value);
+			
+			button.disabled = true;
+			// Validate Name
+			if (!isEmpty(txtName.value)) {
+				
+				// Validate Age
+				if (!isNaN(age) && age > 0) {
+					
+					// Validate Email
+					if (!isEmpty(txtEmail.value) && txtEmail.value.indexOf("@") > 0) {
+						
+						// Validate Password
+						if (!isEmpty(txtPass.value) && txtPass.value.length > 5) {
+							
+							// Validate Retype Password
+							if (!isEmpty(txtRePass.value) && txtRePass.value === txtPass.value) {
+								return;
+							} else {
+								alert("Retype password is not correct! Please enter again!");
+								txtRePass.focus();
+								txtRePass.select();
+							}
+							
+						} else {
+							alert("Please enter your password!");
+							txtPass.focus();
+							txtPass.select();
+						}
+						
+					} else {
+						alert("Please enter your email!");
+						txtEmail.focus();
+						txtEmail.select();
+					}
+					
+				} else {
+					alert("Please enter you age!");
+					txtAge.focus();
+					txtAge.select();
+				}
+				
+			} else {
+				alert("Please enter your name!");
+				txtName.focus();
+				txtName.select();
+			}
+			event.preventDefault();
+			button.disabled = false;
+		}
+		
+		function isEmpty(value) {
+				return (value === "");
+		}
+		
+	</script>
+	
+</body>
+</html>
