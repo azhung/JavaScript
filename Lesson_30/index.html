@@ -13,9 +13,9 @@
 		Retype Password : <input type="password" name="repassword" /><br/>
 		Select Day : <select id="myDay" name="dayOfWeek"></select><br/>
 		Select Color Browser : <br/>
-		<input type="radio" name="color" value="red" /> Red <br/>
-		<input type="radio" name="color" value="blue" /> Blue <br/>
-		<input type="radio" name="color" value="yellow" /> Yellow <br/>
+		<input type="radio" name="color" value="red" onclick="validateColor();" /> Red <br/>
+		<input type="radio" name="color" value="blue" onclick="validateColor();" /> Blue <br/>
+		<input type="radio" name="color" value="yellow" onclick="validateColor();" /> Yellow <br/>
 		
 		<input type="checkbox"	name="agree" onclick="userAgreeClick(event);" /> I Agree term of service and policy refund <br/>
 		<input type="submit" name="submit" value="Submit" disabled="disabled" />
@@ -40,7 +40,10 @@
 			var colorCheck = theForm.color;
 			for (var i = 0; i < colorCheck.length; i++) {
 				if (colorCheck[i].checked) {
-					return true;
+					// alert(colorCheck[i].value);
+					var value = colorCheck[i].value;
+					var el = document.getElementsByTagName("body");
+					el[0].style.background = value;
 				}
 			}
 			return false;
