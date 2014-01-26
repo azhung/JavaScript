@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Lesson 31 | Introduce AJAX</title>
+</head>
+<body>
+	
+	<div id="result"></div>
+	<button onclick="loadHTML();">Load</button>
+	<script type="text/javascript">
+	function loadHTML(){
+		var xmlhttp;
+		// Nếu trình duyệt đang sử dụng là IE7+, FireFox, Chrome, Opera, Sarafi
+		if (window.XMLHttpRequest) {
+			// Gán xmlhttp
+			xmlhttp = new XMLHttpRequest();
+		} else {
+			// Gán xmlhttp cho các trình duyệt IE5 và IE6
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		
+		xmlhttp.onreadystatechange = function () {
+			// Nếu xmlhttp.readyState  và xmlhttp.status không bị lỗi
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				document.getElementById("result").innerHTML = xmlhttp.responseText;
+			}
+		}
+		xmlhttp.open("GET", "test.txt", true);
+		xmlhttp.send();
+	}
+		
+	</script>
+</body>
+</html>
