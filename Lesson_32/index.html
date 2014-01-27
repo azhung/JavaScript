@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lesson 32 | Ajax with PHP</title>
+</head>
+<body>
+	
+	<form name="newForm" method="post">
+		<input type="text" name="textSearch" onkeyup="loadData(this.value);" />
+	</form>
+	<div>ResponText : <span id="respon"></span></div>
+	<script type="text/javascript">
+		function loadData(str) {
+			var xmlhttp;
+			var textHint = document.getElementById("respon");
+			
+			if (str.length == 0) {
+				textHint.innerHTML = "";
+				return;
+			}
+			
+			if (window.XMLHttpRequest) {
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					document.getElementById("respon").innerHTML = xmlhttp.responseText;
+				}
+			}
+			xmlhttp.open("GET", "test.php?p="+str, true);
+			xmlhttp.send();
+		}
+	</script>
+</body>
+</html>
