@@ -85,11 +85,17 @@
 		}
 		echo $callBack;
 	} // END ADD
+	if ($act == "del") {
+		$id = $_REQUEST["id"];
+		$sql_del = "DELETE FROM customers WHERE id = $id";
+		$result = mysql_query($sql_del, $conn);
+		if ($result) {
+			echo "Delete Successfuly";
+		} else {
+			echo "Delete Failed!";
+		}
+	}
 
-	
-	
-	
-	
 	
 	
 	

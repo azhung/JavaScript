@@ -123,7 +123,23 @@
 		}
 		
 		function delCustomer(idCustomer) {
-			alert(idCustomer);
+			// alert(idCustomer);
+			var xmlHttp;
+			var action = "del";
+			if (window.XMLHttpRequest) {
+				xmlHttp = new XMLHttpRequest();
+			} else {
+				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			
+			xmlHttp.onreadystatechange = function() {
+				if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+					alert(xmlHttp.responseText);
+					loadCustomer();
+				}				
+			}
+			xmlHttp.open("GET", "action.php?act="+action+"&id="+idCustomer);
+			xmlHttp.send();
 		}
 		
 		function editCustomer(idCustomer) {
