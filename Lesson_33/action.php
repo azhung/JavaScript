@@ -34,7 +34,7 @@
 				</thead>
 				<tbody id="tbody">
 					<?php while($row = mysql_fetch_array($result)) {
-						echo "<tr class=row-".$row['id'].">";
+						echo "<tr id=row-".$row['id'].">";
 							echo "<td>".$stt."</td>";
 							echo "<td>".$row['company_name']."</td>";
 							echo "<td>".$row['contact_name']."</td>";
@@ -64,26 +64,10 @@
 		// echo $sql;
 		$result = mysql_query($sql, $conn);
 		if ($result) {
-			$id = mysql_insert_id();
-			$sql_back = "SELECT * FROM customers WHERE id = $id";
-			$result = mysql_query($sql_back, $conn);
-			$callBack = "";
-			while ($rows_back = mysql_fetch_array($result)) {
-				$callBack .= "<tr class=row-".$id.">";
-					$callBack .= "<td>1</td>";
-					$callBack .= "<td>".$rows_back['company_name']."</td>";
-					$callBack .= "<td>".$rows_back['contact_name']."</td>";
-					$callBack .= "<td>".$rows_back['address']."</td>";
-					$callBack .= "<td>".$rows_back['city']."</td>";
-					$callBack .= "<td>".$rows_back['postal_code']."</td>";
-					$callBack .= "<td>".$rows_back['country']."</td>";
-					$callBack .= "<td><a href='#' onclick='delCustomer(".$rows_back['id']."); return false;'>DEL</a> | <a href='#' onclick='editCustomer(".$rows_back['id']."); return false;'>EDIT</a></td>";
-				$callBack .= "</tr>";
-			}			
+			echo "Insert new Record Successfuly";
 		} else {
-			$callBack .= "Failed";
+			echo "Insert new Record Failed";
 		}
-		echo $callBack;
 	} // END ADD
 	if ($act == "del") {
 		$id = $_REQUEST["id"];
